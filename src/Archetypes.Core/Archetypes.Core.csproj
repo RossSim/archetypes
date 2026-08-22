@@ -18,5 +18,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="PersonalityEngine.Core" Version="0.6.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\presets\**\*.json">
+      <LogicalName>archetypes.preset.%(Filename).json</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

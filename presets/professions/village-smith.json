@@ -1,0 +1,47 @@
+{
+  "id": "village-smith",
+  "category": "profession",
+  "traits": {
+    "openness": 0.45,
+    "conscientiousness": 0.78,
+    "extraversion": 0.35,
+    "agreeableness": 0.5,
+    "neuroticism": 0.32
+  },
+  "operantSeeds": {
+    "forge": 0.75,
+    "repair": 0.7,
+    "quench": 0.55,
+    "haggle": 0.35,
+    "idle": 0.2
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000). Direction across occupations."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "low",
+    "agreeableness": "mid",
+    "neuroticism": "low"
+  }
+}

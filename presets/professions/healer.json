@@ -1,0 +1,47 @@
+{
+  "id": "healer",
+  "category": "profession",
+  "traits": {
+    "openness": 0.5,
+    "conscientiousness": 0.76,
+    "extraversion": 0.48,
+    "agreeableness": 0.72,
+    "neuroticism": 0.48
+  },
+  "operantSeeds": {
+    "bind": 0.74,
+    "sit-with": 0.68,
+    "dose": 0.62,
+    "fetch-supply": 0.5,
+    "idle": 0.2
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "agreeableness",
+      "source": "project convention. Barrick & Mount did not treat Agreeableness as a strong general performance predictor."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "high",
+    "neuroticism": "mid"
+  }
+}

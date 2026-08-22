@@ -1,0 +1,47 @@
+{
+  "id": "apothecary",
+  "category": "profession",
+  "traits": {
+    "openness": 0.52,
+    "conscientiousness": 0.8,
+    "extraversion": 0.48,
+    "agreeableness": 0.58,
+    "neuroticism": 0.45
+  },
+  "operantSeeds": {
+    "measure": 0.78,
+    "compound": 0.72,
+    "refuse": 0.5,
+    "label": 0.55,
+    "idle": 0.2
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000)."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

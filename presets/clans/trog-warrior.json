@@ -1,0 +1,49 @@
+{
+  "id": "trog-warrior",
+  "category": "clan",
+  "traits": {
+    "openness": 0.32,
+    "conscientiousness": 0.74,
+    "extraversion": 0.55,
+    "agreeableness": 0.4,
+    "neuroticism": 0.4
+  },
+  "cognitiveStage": "ConcreteOperational",
+  "operantSeeds": {
+    "strike": 0.75,
+    "guard": 0.7,
+    "repeat-protocol": 0.68,
+    "charge": 0.5,
+    "idle": 0.22
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant",
+    "piaget-equilibration"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008). Low Openness is not a Piaget stage and not an IQ. Exact midpoint: project convention."
+    },
+    {
+      "knob": "cognitiveStage",
+      "source": "Piaget (1950); Inhelder & Piaget (1958). ConcreteOperational for the clan: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "low",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

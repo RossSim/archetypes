@@ -1,6 +1,6 @@
 # Presets
 
-Hand-authored catalog tables. Markdown is the authoring source. C# `MindPreset` encodings live in `src/Archetypes.Core`; later JSON should be inferred from these rows.
+Hand-authored catalog tables. Markdown is the authoring source. C# `Catalog` and embedded JSON under this tree encode the same `MindPreset` rows.
 
 ## Layout
 
@@ -10,7 +10,7 @@ presets/
 ├── schema.md              # shared row fields
 ├── professions/
 │   ├── README.md          # ISCO-08 sampling frame + full job index
-│   └── *.md               # one file per generic job
+│   └── *.md               # one file per generic job (JSON sidecars named by id)
 ├── clans/
 │   ├── README.md          # clan template + clan guardrails
 │   ├── philobrain-scholar.md
@@ -31,7 +31,7 @@ presets/
 | Clan template and index | [`clans/README.md`](clans/README.md) |
 | Temperament template and index | [`temperament/README.md`](temperament/README.md) |
 
-`Catalog` in `src/Archetypes.Core` encodes every profession, clan, and temperament row in this tree.
+`Catalog` in `src/Archetypes.Core` encodes every profession, clan, and temperament row in this tree. `CatalogJson.Load(id)` reads the embedded JSON sidecar.
 
 ## Profession guardrails
 

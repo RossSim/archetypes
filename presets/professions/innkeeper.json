@@ -1,0 +1,47 @@
+{
+  "id": "innkeeper",
+  "category": "profession",
+  "traits": {
+    "openness": 0.48,
+    "conscientiousness": 0.62,
+    "extraversion": 0.72,
+    "agreeableness": 0.7,
+    "neuroticism": 0.42
+  },
+  "operantSeeds": {
+    "serve": 0.74,
+    "welcome": 0.68,
+    "keep-tab": 0.6,
+    "eject": 0.42,
+    "idle": 0.22
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "extraversion",
+      "source": "Barrick & Mount (1991) Extraversion for social-interaction jobs. Exact midpoint: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "mid",
+    "extraversion": "high",
+    "agreeableness": "high",
+    "neuroticism": "mid"
+  }
+}

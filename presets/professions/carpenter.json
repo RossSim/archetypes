@@ -1,0 +1,47 @@
+{
+  "id": "carpenter",
+  "category": "profession",
+  "traits": {
+    "openness": 0.5,
+    "conscientiousness": 0.78,
+    "extraversion": 0.42,
+    "agreeableness": 0.52,
+    "neuroticism": 0.4
+  },
+  "operantSeeds": {
+    "measure": 0.72,
+    "join": 0.76,
+    "repair": 0.7,
+    "plane": 0.55,
+    "idle": 0.2
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000)."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

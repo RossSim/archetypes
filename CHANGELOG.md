@@ -11,6 +11,7 @@ Versions follow [SemVer](https://semver.org/).
 
 - C# `Catalog` encodings for the remaining profession rows so every ISCO-08 major-group job has a `MindPreset`
 - Temperament catalog: Thomas & Chess easy / difficult / slow-to-warm-up as OCEAN bands on the existing jitter tiers, not a type inventory
+- Embedded JSON sidecars for every catalog row, `CatalogJson` loader, and `docs/CITATIONS.md`
 
 ## [0.1.0] - 2026-08-22
 

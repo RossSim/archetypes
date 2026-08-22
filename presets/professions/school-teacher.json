@@ -1,0 +1,47 @@
+{
+  "id": "school-teacher",
+  "category": "profession",
+  "traits": {
+    "openness": 0.55,
+    "conscientiousness": 0.74,
+    "extraversion": 0.66,
+    "agreeableness": 0.68,
+    "neuroticism": 0.45
+  },
+  "operantSeeds": {
+    "drill": 0.74,
+    "correct": 0.68,
+    "keep-room": 0.62,
+    "praise": 0.5,
+    "idle": 0.2
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "extraversion",
+      "source": "Barrick & Mount (1991) Extraversion for social-interaction jobs; holding a room. Exact midpoint: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "high",
+    "agreeableness": "high",
+    "neuroticism": "mid"
+  }
+}

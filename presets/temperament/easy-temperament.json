@@ -1,0 +1,43 @@
+{
+  "id": "easy-temperament",
+  "category": "temperament",
+  "traits": {
+    "openness": 0.5,
+    "conscientiousness": 0.55,
+    "extraversion": 0.68,
+    "agreeableness": 0.7,
+    "neuroticism": 0.32
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "constellation",
+      "source": "Thomas & Chess (1977, 1981); Thomas, Chess & Birch (1968). Mapping onto OCEAN: project convention."
+    },
+    {
+      "knob": "extraversion",
+      "source": "Thomas & Chess approach. Exact midpoint: project convention."
+    },
+    {
+      "knob": "pad",
+      "source": "Mehrabian (1996); Gebhard (2005). PAD baseline from ocean-to-pad, not a separate temperament provider."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "mid",
+    "extraversion": "high",
+    "agreeableness": "high",
+    "neuroticism": "low"
+  }
+}

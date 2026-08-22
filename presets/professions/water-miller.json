@@ -1,0 +1,47 @@
+{
+  "id": "water-miller",
+  "category": "profession",
+  "traits": {
+    "openness": 0.44,
+    "conscientiousness": 0.8,
+    "extraversion": 0.36,
+    "agreeableness": 0.5,
+    "neuroticism": 0.42
+  },
+  "operantSeeds": {
+    "tend-mill": 0.76,
+    "grind": 0.7,
+    "stop-mill": 0.62,
+    "take-toll": 0.4,
+    "idle": 0.22
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000)."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "low",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}
