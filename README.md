@@ -47,7 +47,7 @@ var engine = PresetBuilder.Build(Catalog.VillageSmith);
 engine.Tick(PersonalityEngine.WorldEvent.Tick);
 ```
 
-Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood; Piaget kept when the seed enabled it). Markdown under `presets/` is the authoring source. `Catalog` currently encodes five of those rows in C# (`village-smith`, `wilderness-scout`, `records-clerk`, `philobrain-scholar`, `trog-warrior`).
+Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood; Piaget kept when the seed enabled it). Markdown under `presets/` is the authoring source. `Catalog` encodes every profession and clan row in that index.
 
 ## Documentation
 

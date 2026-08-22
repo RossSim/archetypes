@@ -27,7 +27,7 @@ Temperament is a later catalog.
 | Job index and ISCO-08 sampling frame | [`professions/README.md`](professions/README.md) |
 | Clan template and index | [`clans/README.md`](clans/README.md) |
 
-`Catalog` in `src/Archetypes.Core` currently encodes five rows: `village-smith`, `wilderness-scout`, `records-clerk`, `philobrain-scholar`, `trog-warrior`. Other profession markdown files are authoring-ahead of that C# list.
+`Catalog` in `src/Archetypes.Core` encodes every profession and clan row in this tree.
 
 ## Profession guardrails
 

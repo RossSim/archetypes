@@ -76,7 +76,7 @@ public sealed record MindPreset(
 
 `CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if later catalogs show the record is wrong.
 
-`Catalog` currently encodes five markdown rows in C#. Other profession files are authoring-ahead of that list.
+`Catalog` encodes every profession and clan markdown row in C#.
 
 ## Fantasy vs science docs
 
