@@ -31,7 +31,7 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**Skeleton.** Charter, roadmap, and design notes. Next: profession and clan **tables**, then a builder. No NuGet package yet.
+**Skeleton.** Charter, roadmap, design notes, and a **profession catalog** covering ILO ISCO-08 major groups with generic jobs. Next: fantasy clan **tables**, then a builder. No NuGet package yet.
 
 Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 
@@ -45,16 +45,17 @@ Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 | [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
 | [Changelog](CHANGELOG.md) | Version notes |
 | [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
+| [Profession catalog](presets/README.md) | Schema, guardrails, job index |
+| [Profession sampling](presets/professions/README.md) | ISCO-08 major groups as a sampling frame |
 
 ## Planned layout
 
 ```text
 archetypes/
 ├── docs/
-├── presets/          # JSON or embedded catalogs (profession, temperament, fantasy)
-├── src/
-│   Archetypes.Core/   # MindPreset, PresetBuilder → AffectEngine
-│   Archetypes.Presets/
+├── presets/           # catalog tables (profession now; clan next)
+│   └── professions/
+├── src/               # later: MindPreset, PresetBuilder → AffectEngine
 └── tests/
 ```
 
