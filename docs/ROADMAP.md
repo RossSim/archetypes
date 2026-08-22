@@ -45,12 +45,10 @@ Track PE provider work in the personality-engine repo and its private tracker. T
 - IQ, g, or WAIS-style composite scores
 - MBTI or four-letter type inventories
 - New affect providers (file those in personality-engine)
-- Unity samples (games reference both packages when they exist)
+- Unity samples **in this repo** (the playable host is [NPC-demo](https://github.com/RossSim/NPC-demo))
 
 ## Controversy guardrails (product)
 
-- Public catalog: fantasy clans, generic professions, and temperament climates only
-- Every preset documents **per-knob** citations in fiction vs science sections
-- Ability differences = structure + training + trait bands, not “less intelligent people”
+Normative list: [Charter](CHARTER.md). Merge checklist: [presets/README.md](../presets/README.md).
 
-See [Charter](CHARTER.md) and [Design](DESIGN.md).
+See also [Design](DESIGN.md).

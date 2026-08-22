@@ -16,6 +16,8 @@ Tables come first. A profession, clan, or temperament file in `presets/` is a **
 | Lore names | — | `philobrain-scholar`, `trog-warrior` |
 | Builder | `AlmaComposition.Create(...)` | `PresetBuilder.Build(preset)` |
 
+A Unity game that ticks those engines lives in [NPC-demo](https://github.com/RossSim/NPC-demo), not in this repo.
+
 ## Catalog row
 
 Every public entry should be able to carry:
@@ -33,39 +35,15 @@ Markdown is the authoring format. C# `Catalog` encodes those rows. `CatalogJson`
 
 ## Profession catalog guardrails
 
-Profession entries (and any later job added to `presets/professions/`) must pass:
-
-- No IQ, g, or composite cognitive rank — including “this job is smarter”
-- No real-world race, ethnicity, or national presets
-- No MBTI
-- Fiction ≠ science: the blurb must not stand in for a citation
-- Every numeric knob cites a paper **or** is labeled **project convention**
-- Only Personality Engine 0.6.1+ constructor args
-- Omit `cognitiveStage` / `identityStage` on generic adult jobs unless the host is portraying a developmental role
-
-The same list is in [`presets/README.md`](../presets/README.md). Occupational *space* is sampled with at least one generic job per ILO ISCO-08 major group; see [`presets/professions/README.md`](../presets/professions/README.md). Do not import ISCO skill levels as Piaget stage, IQ, or prestige.
+Merge rules are in the [charter](CHARTER.md) (normative) and [`presets/README.md`](../presets/README.md) (checklist). Occupational *space* is sampled with at least one generic job per ILO ISCO-08 major group; see [`presets/professions/README.md`](../presets/professions/README.md). Do not import ISCO skill levels as Piaget stage, IQ, or prestige.
 
 ## Clan catalog guardrails
 
-On top of the profession list:
-
-- Public catalog: fantasy ids only (`philobrain-scholar`, `trog-warrior`, …)
-- No real-world race, ethnicity, or national cognitive rank tables
-- Cognitive difference = Piaget structure + operant training + trait bands — never “less intelligent people”
-- Three sections required: Fiction / Knobs / Citations
-- Template: [`presets/clans/README.md`](../presets/clans/README.md)
+Clan template and extra rules: [`presets/clans/README.md`](../presets/clans/README.md). Public catalog: fantasy ids only. Piaget `cognitiveStage` on a clan is a host-set flag for PE’s `hypothetical` channel, not a claim that a people is stuck in a childhood stage or is less intelligent.
 
 ## Temperament catalog guardrails
 
-On top of the profession list:
-
-- Not a type inventory (no MBTI, no four-letter types, no “you are easy”)
-- Thomas & Chess easy / difficult / slow-to-warm-up as **OCEAN bands**, not NYLS scoring keys
-- Spread knobs across Extraversion, Agreeableness, Neuroticism, and Conscientiousness — not Neuroticism alone
-- PAD baseline comes from PE `ocean-to-pad`; do not hand-author Pleasure / Arousal / Dominance
-- Intensity, sensory threshold, and distractibility are not PE knobs
-- Omit Piaget, Erikson, and Skinner on temperament rows
-- Template: [`presets/temperament/README.md`](../presets/temperament/README.md)
+Temperament template and extra rules: [`presets/temperament/README.md`](../presets/temperament/README.md). Unique to that catalog: not a type inventory; PAD from `ocean-to-pad`; omit Skinner, Piaget, and Erikson.
 
 ## MindPreset
 
@@ -113,6 +91,8 @@ Each clan preset should split:
 Avoid one bibliography backing the whole archetype. Profession files use the same three sections.
 
 ## Cognitive difference without IQ
+
+Piaget described **child development**. A clan `cognitiveStage` is a host-set flag for PE’s `hypothetical` channel (on at `FormalOperational`). That is a game metaphor — **project convention** — not a claim that a people is stuck in childhood or is less intelligent.
 
 | Player-visible behavior | Knob |
 | --- | --- |
