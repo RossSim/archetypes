@@ -9,7 +9,7 @@ Personality Engine **0.6.1+** knobs only. Do not invent fields the engine cannot
 | Field | What it is |
 | --- | --- |
 | `id` | Kebab-case preset id (`village-smith`) |
-| `category` | `profession` now; later `clan` or `temperament` |
+| `category` | `profession` or `clan` now; later `temperament` |
 | `fiction` | Short designer-facing blurb. Not a citation. |
 | `traits` | Five OCEAN values in 0..1, **or** a named band plus a recommended midpoint. Constructor order in PE: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism. |
 | `operantSeeds` | Action-id → strength (0..1). Training history for `skinner-operant`. Strengths are a game proxy, not laboratory response rates. |
@@ -20,7 +20,7 @@ Personality Engine **0.6.1+** knobs only. Do not invent fields the engine cannot
 
 | Field | What it is |
 | --- | --- |
-| `cognitiveStage` | PE `CognitiveStage` (`Sensorimotor`, `Preoperational`, `ConcreteOperational`, `FormalOperational`). Host-set; omit on generic adult jobs so professions do not rank intelligence. |
+| `cognitiveStage` | PE `CognitiveStage` (`Sensorimotor`, `Preoperational`, `ConcreteOperational`, `FormalOperational`). Host-set. Omit on generic adult **jobs**. **Clans** may set it: PE gates `hypothetical` on at `FormalOperational`. That is structure, not IQ. |
 | `identityStage` | PE `PsychosocialStage` (Erikson eight ages). Host-set; omit unless the job is about a life-stage role. |
 | `jitter` | Named vs ambient vs crowd notes (trait delta, which layers to keep) |
 
@@ -47,7 +47,9 @@ Generic adult jobs enable the ALMA stack plus operant training:
 - `occ-to-pad`
 - `skinner-operant`
 
-A job may add other **already-shipped** PE ids (for example `peterson-maps` when exploration/meaning is part of the work). Do not list ids PE does not have.
+A job or clan may add other **already-shipped** PE ids (for example `peterson-maps` when exploration/meaning is part of the work, or `piaget-equilibration` when a clan sets `cognitiveStage`). Do not list ids PE does not have.
+
+Clan files must use the three-section template in [`clans/README.md`](clans/README.md).
 
 PE’s `OperantLearningProvider` currently seeds listed action ids at its default operant level. Catalog `operantSeeds` strengths are **author intent** for a later builder; they are not applied by PE 0.6.1 on its own.
 

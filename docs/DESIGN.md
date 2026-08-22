@@ -45,6 +45,16 @@ Profession entries (and any later job added to `presets/professions/`) must pass
 
 The same list is in [`presets/README.md`](../presets/README.md). Occupational *space* is sampled with at least one generic job per ILO ISCO-08 major group; see [`presets/professions/README.md`](../presets/professions/README.md). Do not import ISCO skill levels as Piaget stage, IQ, or prestige.
 
+## Clan catalog guardrails
+
+On top of the profession list:
+
+- Public catalog: fantasy ids only (`philobrain-scholar`, `trog-warrior`, …)
+- No real-world race, ethnicity, or national cognitive rank tables
+- Cognitive difference = Piaget structure + operant training + trait bands — never “less intelligent people”
+- Three sections required: Fiction / Knobs / Citations
+- Template: [`presets/clans/README.md`](../presets/clans/README.md)
+
 ## MindPreset (after catalogs)
 
 Expected builder shape once tables prove the fields:
