@@ -12,6 +12,7 @@ Versions follow [SemVer](https://semver.org/).
 - Charter, Cursor start notes, and a public-hygiene check
 - Catalog-first sequencing: profession and clan tables before `MindPreset`
 - Profession catalog: shared schema, merge guardrails, and three generic jobs (`village-smith`, `wilderness-scout`, `records-clerk`)
+- Clan catalog: three-section template, guardrails, and two fantasy seeds (`philobrain-scholar`, `trog-warrior`)
 
 ### Changed
 

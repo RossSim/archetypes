@@ -8,13 +8,17 @@ Hand-authored catalog tables. Markdown is the format until a builder exists. The
 presets/
 ├── README.md              # this file: index + profession guardrails
 ├── schema.md              # shared row fields
-└── professions/
-    ├── smith.md
-    ├── scout.md
-    └── clerk.md
+├── professions/
+│   ├── smith.md
+│   ├── scout.md
+│   └── clerk.md
+└── clans/
+    ├── README.md          # clan template + clan guardrails
+    ├── philobrain-scholar.md
+    └── trog-warrior.md
 ```
 
-Clan tables come next (same schema, Fiction / Knobs / Citations split). Temperament is later.
+Temperament is later.
 
 ## Profession index
 
@@ -37,5 +41,7 @@ Every profession entry must pass this list before merge:
 - Only Personality Engine 0.6.1+ constructor args (`OceanTraits`, optional Piaget/Erikson stages, operant seeds, enabled provider ids)
 - Jobs differ by **trait bands + training history**, not by “smarter” or “dumber” people
 - Generic job names only (smith, scout, clerk) — not real-world demographic groups
+
+Clan template and extra clan rules: [clans/README.md](clans/README.md).
 
 See also [Disclaimer](../DISCLAIMER.md) and [Design](../docs/DESIGN.md).

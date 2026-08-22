@@ -31,7 +31,7 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**Skeleton.** Charter, roadmap, design notes, and a first **profession catalog** (smith, scout, clerk). Next: fantasy clan **tables**, then a builder. No NuGet package yet.
+**Skeleton.** Charter, roadmap, design notes, plus **profession** and **clan** catalog tables. Next: a builder inferred from those rows. No NuGet package yet.
 
 Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 
@@ -46,14 +46,16 @@ Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 | [Changelog](CHANGELOG.md) | Version notes |
 | [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
 | [Profession catalog](presets/README.md) | Schema, guardrails, smith / scout / clerk |
+| [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
 
 ## Planned layout
 
 ```text
 archetypes/
 ├── docs/
-├── presets/           # catalog tables (profession now; clan next)
-│   └── professions/
+├── presets/           # catalog tables (profession + clan)
+│   ├── professions/
+│   └── clans/
 ├── src/               # later: MindPreset, PresetBuilder → AffectEngine
 └── tests/
 ```
