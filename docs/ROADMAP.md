@@ -2,19 +2,19 @@
 
 Archetypes maps **preset ids** into Personality Engine compositions. Direction only — not a contract. Patch releases fix docs and presets without schema breaks.
 
-Current status: **0.1 builder** on `main`. Profession and clan catalogs, `MindPreset`, and `PresetBuilder` → `AffectEngine`. Temperament, embedded JSON, and a schema freeze (NuGet) are later.
+Current status: **0.1 builder** on `main`. Profession, clan, and temperament catalogs, `MindPreset`, and `PresetBuilder` → `AffectEngine`. Embedded JSON and a schema freeze (NuGet) are later.
 
 Personality Engine home: https://github.com/RossSim/personality-engine
 
 ## Sequencing (catalog-first)
 
-Author profession and clan **tables** (fiction / knobs / citations) before extending `MindPreset`. Version numbers below are later intent, not a rewrite of the charter.
+Author profession, clan, and temperament **tables** (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. Version numbers below are later intent, not a rewrite of the charter.
 
 ```mermaid
 flowchart LR
   v00["0.0 skeleton"] --> catalogs["profession + clan tables"]
   catalogs --> v01["0.1 builder"]
-  v01 --> later["temperament, JSON, 1.0"]
+  v01 --> later["JSON, 1.0"]
 ```
 
 ## Intended versions
@@ -22,12 +22,11 @@ flowchart LR
 | Version | What a host would get |
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
-| 0.1 | Profession + clan tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds for every catalog row |
-| later | Temperament catalog (Thomas & Chess bands) on the same jitter tiers |
+| 0.1 | Profession, clan, and temperament tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds for every catalog row |
 | later | Embedded JSON presets + `docs/CITATIONS.md` per knob |
 | 1.0 | Frozen `MindPreset` schema and builder contract; NuGet `Archetypes.Core` |
 
-Do not invent knobs Personality Engine cannot consume yet. Named vs ambient jitter already ships with the builder; temperament is a later *catalog*.
+Do not invent knobs Personality Engine cannot consume yet. Named vs ambient jitter already ships with the builder; temperament is a catalog on those same tiers.
 
 ## Depends on Personality Engine
 
@@ -51,7 +50,7 @@ Track PE provider work in the personality-engine repo and its private tracker. T
 
 ## Controversy guardrails (product)
 
-- Public catalog: fantasy clans and generic professions only
+- Public catalog: fantasy clans, generic professions, and temperament climates only
 - Every preset documents **per-knob** citations in fiction vs science sections
 - Ability differences = structure + training + trait bands, not “less intelligent people”
 

@@ -19,6 +19,15 @@ public static class Catalog
         "skinner-operant"
     };
 
+    public static readonly string[] AlmaPersonality =
+    {
+        "ocean",
+        "ocean-to-pad",
+        "pad-mood",
+        "occ",
+        "occ-to-pad"
+    };
+
     public static MindPreset VillageSmith { get; } = new(
         "village-smith",
         "profession",
@@ -187,6 +196,27 @@ public static class Catalog
         },
         Bands: new OceanBands(TraitBand.Low, TraitBand.High, TraitBand.Mid, TraitBand.Mid, TraitBand.Mid));
 
+    public static MindPreset EasyTemperament { get; } = Temperament(
+        "easy-temperament",
+        new OceanTraits(0.50f, 0.55f, 0.68f, 0.70f, 0.32f),
+        new OceanBands(TraitBand.Mid, TraitBand.Mid, TraitBand.High, TraitBand.High, TraitBand.Low),
+        "extraversion",
+        "Thomas & Chess approach. Exact midpoint: project convention.");
+
+    public static MindPreset DifficultTemperament { get; } = Temperament(
+        "difficult-temperament",
+        new OceanTraits(0.48f, 0.35f, 0.32f, 0.32f, 0.72f),
+        new OceanBands(TraitBand.Mid, TraitBand.Low, TraitBand.Low, TraitBand.Low, TraitBand.High),
+        "neuroticism",
+        "Thomas & Chess quality of mood. Exact midpoint: project convention. Not the only knob on this row.");
+
+    public static MindPreset SlowToWarmUp { get; } = Temperament(
+        "slow-to-warm-up",
+        new OceanTraits(0.42f, 0.50f, 0.30f, 0.48f, 0.52f),
+        new OceanBands(TraitBand.Mid, TraitBand.Mid, TraitBand.Low, TraitBand.Mid, TraitBand.Mid),
+        "extraversion",
+        "Thomas & Chess withdrawal plus low activity. Exact midpoint: project convention.");
+
     public static IReadOnlyList<MindPreset> Professions { get; } =
         new[]
         {
@@ -198,12 +228,16 @@ public static class Catalog
     public static IReadOnlyList<MindPreset> Clans { get; } =
         new[] { PhilobrainScholar, TrogWarrior };
 
+    public static IReadOnlyList<MindPreset> Temperaments { get; } =
+        new[] { EasyTemperament, DifficultTemperament, SlowToWarmUp };
+
     public static IReadOnlyList<MindPreset> Seeds { get; } =
         new[]
         {
             VillageSmith, Carpenter, WildernessScout, TownWatch, RecordsClerk, GuildSteward,
             MarketMerchant, Innkeeper, Healer, Apothecary, SchoolTeacher, FieldFarmer,
-            Herder, WaterMiller, Porter, PhilobrainScholar, TrogWarrior
+            Herder, WaterMiller, Porter, PhilobrainScholar, TrogWarrior,
+            EasyTemperament, DifficultTemperament, SlowToWarmUp
         };
 
     private static MindPreset Job(
@@ -231,6 +265,29 @@ public static class Catalog
             new CitationRef(highlightKnob, highlightSource),
             new CitationRef("operantSeeds", "Skinner (1953). Strengths and action ids: project convention.")
         };
+
+    private static MindPreset Temperament(
+        string id,
+        OceanTraits traits,
+        OceanBands bands,
+        string highlightKnob,
+        string highlightSource) =>
+        new(
+            id,
+            "temperament",
+            traits,
+            Stage: null,
+            IdentityStage: null,
+            OperantSeeds: null,
+            EnabledProviderIds: AlmaPersonality,
+            Rationale: new[]
+            {
+                new CitationRef("traits", "McCrae & Costa (2008)."),
+                new CitationRef("constellation", "Thomas & Chess (1977, 1981); Thomas, Chess & Birch (1968). Mapping onto OCEAN: project convention."),
+                new CitationRef(highlightKnob, highlightSource),
+                new CitationRef("pad", "Mehrabian (1996); Gebhard (2005). PAD baseline from ocean-to-pad, not a separate temperament provider.")
+            },
+            Bands: bands);
 
     private static IReadOnlyDictionary<string, float> Operants(params (string Id, float Strength)[] pairs)
     {

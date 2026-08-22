@@ -1,6 +1,6 @@
 # Archetypes charter
 
-`archetypes` is a companion **preset library** for games: profession and fantasy-clan **mind seeds** (temperament later) that map into Personality Engine constructor arguments.
+`archetypes` is a companion **preset library** for games: profession, fantasy-clan, and temperament **mind seeds** that map into Personality Engine constructor arguments.
 
 **Home:** https://github.com/RossSim/archetypes (public MIT)
 
@@ -13,7 +13,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 - **Shape:** preset id in; PE constructor args out (`OceanTraits`, optional stages, operant seeds, enabled provider ids).
 - **No new psychology in this repo.** Providers stay in [personality-engine](https://github.com/RossSim/personality-engine).
 - **No IQ, g, or WAIS-style composites.** Ability differences use structure (Piaget), training (Skinner), and trait bands.
-- **Public catalog:** fantasy clans and generic professions only. No real-world race, ethnicity, or national cognitive rank tables. No MBTI.
+- **Public catalog:** fantasy clans, generic professions, and temperament climates only. No real-world race, ethnicity, or national cognitive rank tables. No MBTI.
 - **Per-knob citations.** Fiction vs science split on clan presets. Project-convention numbers labeled as such.
 - **Not a clinic.** This is entertainment and research middleware, not a psychometric test or a medical device. See [`DISCLAIMER.md`](../DISCLAIMER.md).
 - **GitHub stays public.** Do not put private issue-tracker URLs, project keys, or ticket ids in this repository, GitHub pull requests, issues, commit messages, Releases, or release notes.
@@ -22,7 +22,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 
 ## Sequencing (catalog-first)
 
-Author **tables before code**. New profession and clan entries start as markdown (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. `PresetBuilder` already maps those rows into Personality Engine. NuGet waits until the schema freeze.
+Author **tables before code**. New profession, clan, and temperament entries start as markdown (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. `PresetBuilder` already maps those rows into Personality Engine. NuGet waits until the schema freeze.
 
 Do not invent knobs Personality Engine cannot take yet (Sternberg, RIASEC, Bandura wait for those providers in personality-engine).
 

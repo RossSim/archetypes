@@ -150,6 +150,63 @@ public sealed class PresetBuilderTests
         Assert.Equal(0.76f, tend, 3);
     }
 
+    [Fact]
+    public void Every_temperament_omits_stages_and_skinner()
+    {
+        Assert.Equal(3, Catalog.Temperaments.Count);
+        foreach (var row in Catalog.Temperaments)
+        {
+            Assert.Equal("temperament", row.Category);
+            Assert.Null(row.Stage);
+            Assert.Null(row.IdentityStage);
+            Assert.Null(row.OperantSeeds);
+            Assert.DoesNotContain("skinner-operant", row.EnabledProviderIds);
+            Assert.DoesNotContain("piaget-equilibration", row.EnabledProviderIds);
+            Assert.Contains("ocean-to-pad", row.EnabledProviderIds);
+        }
+    }
+
+    [Fact]
+    public void Temperament_is_not_neuroticism_alone()
+    {
+        Assert.True(Catalog.EasyTemperament.Traits.Extraversion >= 0.65f);
+        Assert.True(Catalog.EasyTemperament.Traits.Agreeableness >= 0.65f);
+        Assert.True(Catalog.EasyTemperament.Traits.Neuroticism <= 0.40f);
+
+        Assert.True(Catalog.DifficultTemperament.Traits.Extraversion <= 0.40f);
+        Assert.True(Catalog.DifficultTemperament.Traits.Agreeableness <= 0.40f);
+        Assert.True(Catalog.DifficultTemperament.Traits.Conscientiousness <= 0.40f);
+        Assert.True(Catalog.DifficultTemperament.Traits.Neuroticism >= 0.65f);
+
+        Assert.True(Catalog.SlowToWarmUp.Traits.Extraversion <= 0.40f);
+        Assert.InRange(Catalog.SlowToWarmUp.Traits.Agreeableness, 0.40f, 0.60f);
+        Assert.InRange(Catalog.SlowToWarmUp.Traits.Neuroticism, 0.40f, 0.60f);
+    }
+
+    [Fact]
+    public void Temperament_pad_baseline_comes_from_ocean_to_pad()
+    {
+        var easy = OceanToPadMapping.Map(Catalog.EasyTemperament.Traits);
+        var difficult = OceanToPadMapping.Map(Catalog.DifficultTemperament.Traits);
+        var slow = OceanToPadMapping.Map(Catalog.SlowToWarmUp.Traits);
+
+        var snap = PresetBuilder.Build(Catalog.EasyTemperament).Snapshot;
+        Assert.True(snap.TryGet(OceanToPadMapping.PleasureKey, out var pleasure));
+        Assert.Equal(easy.Pleasure, pleasure, 3);
+        Assert.True(easy.Pleasure > slow.Pleasure);
+        Assert.True(slow.Pleasure > difficult.Pleasure);
+        Assert.False(snap.TryGet(OperantLearningProvider.StrengthKey("forge"), out _));
+    }
+
+    [Fact]
+    public void Named_temperament_still_records_occ()
+    {
+        var engine = PresetBuilder.Build(Catalog.DifficultTemperament);
+        engine.Tick(new WorldEvent(OccEmotion.DistressKind, 1f));
+        Assert.True(engine.Snapshot.TryGet(OccEmotion.DistressKey, out var distress));
+        Assert.True(distress > 0f);
+    }
+
     public static IEnumerable<object[]> CatalogSeeds()
     {
         foreach (var seed in Catalog.Seeds)

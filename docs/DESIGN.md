@@ -4,7 +4,7 @@ How Archetypes sits beside Personality Engine without forking psychology.
 
 ## Catalog-first
 
-Tables come first. A profession or clan file in `presets/` is a **row**: fiction, knobs Personality Engine can already take, and per-knob citations. `MindPreset` and `PresetBuilder` are inferred from those rows. Do not invent knobs PE cannot consume yet.
+Tables come first. A profession, clan, or temperament file in `presets/` is a **row**: fiction, knobs Personality Engine can already take, and per-knob citations. `MindPreset` and `PresetBuilder` are inferred from those rows. Do not invent knobs PE cannot consume yet.
 
 ## Split of responsibility
 
@@ -20,7 +20,7 @@ Tables come first. A profession or clan file in `presets/` is a **row**: fiction
 
 Every public entry should be able to carry:
 
-- `id`, `category` (`profession`, `clan`, later `temperament`)
+- `id`, `category` (`profession`, `clan`, `temperament`)
 - `traits` — five OCEAN 0..1, or a documented band plus a midpoint
 - `operantSeeds` — action-id → strength for training history
 - `enabledProviderIds` — which PE providers this seed expects
@@ -55,14 +55,26 @@ On top of the profession list:
 - Three sections required: Fiction / Knobs / Citations
 - Template: [`presets/clans/README.md`](../presets/clans/README.md)
 
+## Temperament catalog guardrails
+
+On top of the profession list:
+
+- Not a type inventory (no MBTI, no four-letter types, no “you are easy”)
+- Thomas & Chess easy / difficult / slow-to-warm-up as **OCEAN bands**, not NYLS scoring keys
+- Spread knobs across Extraversion, Agreeableness, Neuroticism, and Conscientiousness — not Neuroticism alone
+- PAD baseline comes from PE `ocean-to-pad`; do not hand-author Pleasure / Arousal / Dominance
+- Intensity, sensory threshold, and distractibility are not PE knobs
+- Omit Piaget, Erikson, and Skinner on temperament rows
+- Template: [`presets/temperament/README.md`](../presets/temperament/README.md)
+
 ## MindPreset
 
-Inferred from the profession and clan tables:
+Inferred from the catalog tables:
 
 ```csharp
 public sealed record MindPreset(
     string Id,
-    string Category,              // profession, clan, later temperament
+    string Category,              // profession, clan, temperament
     OceanTraits Traits,
     CognitiveStage? Stage,
     PsychosocialStage? IdentityStage,
@@ -76,7 +88,7 @@ public sealed record MindPreset(
 
 `CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if later catalogs show the record is wrong.
 
-`Catalog` encodes every profession and clan markdown row in C#.
+`Catalog` encodes every profession, clan, and temperament markdown row in C#.
 
 ## Fantasy vs science docs
 
