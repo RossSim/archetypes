@@ -50,6 +50,8 @@ One row per knob. Never one list that “covers the clan.”
 | `philobrain-scholar` | Clan that prizes hypotheticals and scholarship |
 | `trog-warrior` | Clan trained for the fight; stays with what already worked |
 
+Both clan rows are encoded in `Catalog` (`philobrain-scholar`, `trog-warrior`).
+
 ## Clan guardrails
 
 Profession guardrails still apply. In addition:

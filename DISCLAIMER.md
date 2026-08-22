@@ -20,7 +20,7 @@ Do not represent Archetypes or its presets as:
 
 ## Preset policy
 
-The **public** catalog will not ship real-world race, ethnicity, or national cognitive rank presets. Fantasy clans and generic professions use cited psychological **knobs** (cognitive stage, operant history, trait bands), not IQ or g-factor channels. Profession merge rules are in [`presets/README.md`](presets/README.md). Clan merge rules are in [`presets/clans/README.md`](presets/clans/README.md).
+The **public** catalog does not ship real-world race, ethnicity, or national cognitive rank presets. Fantasy clans and generic professions use cited psychological **knobs** (cognitive stage, operant history, trait bands), not IQ or g-factor channels. Profession merge rules are in [`presets/README.md`](presets/README.md). Clan merge rules are in [`presets/clans/README.md`](presets/clans/README.md).
 
 Hosts may add private presets at their own risk and must obtain their own legal and ethical review.
 

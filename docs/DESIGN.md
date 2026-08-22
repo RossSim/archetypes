@@ -12,11 +12,11 @@ Tables come first. A profession or clan file in `presets/` is a **row**: fiction
 | --- | --- | --- |
 | Runtime tick | `AffectEngine.Tick` | — |
 | Cited theory | `IAffectProvider` implementations | — |
-| Starting profile | Constructor args | Catalog tables, later `MindPreset` |
+| Starting profile | Constructor args | Catalog tables → `MindPreset` |
 | Lore names | — | `philobrain-scholar`, `trog-warrior` |
 | Builder | `AlmaComposition.Create(...)` | `PresetBuilder.Build(preset)` |
 
-## Catalog row (now)
+## Catalog row
 
 Every public entry should be able to carry:
 
@@ -29,7 +29,7 @@ Every public entry should be able to carry:
 - optional `jitter` notes (named vs ambient)
 - a short **fiction** blurb separate from knobs
 
-Markdown or JSON is fine for authoring. The builder reads `MindPreset` in C#; embedded JSON is a later epic. The first rows live in [`presets/`](../presets/README.md); field definitions are in [`presets/schema.md`](../presets/schema.md).
+Markdown is the authoring format. The builder reads `MindPreset` in C# (`src/Archetypes.Core`). Embedded JSON is later. Field definitions: [`presets/schema.md`](../presets/schema.md). Catalog hub: [`presets/README.md`](../presets/README.md).
 
 ## Profession catalog guardrails
 
@@ -62,18 +62,21 @@ Inferred from the profession and clan tables:
 ```csharp
 public sealed record MindPreset(
     string Id,
-    string Category,              // profession, temperament, clan
+    string Category,              // profession, clan, later temperament
     OceanTraits Traits,
     CognitiveStage? Stage,
     PsychosocialStage? IdentityStage,
     IReadOnlyDictionary<string, float>? OperantSeeds,
     string[] EnabledProviderIds,
-    IReadOnlyList<CitationRef> Rationale);
+    IReadOnlyList<CitationRef> Rationale,
+    OceanBands? Bands = null);
 ```
 
-`PresetBuilder.Build(preset)` assembles PE providers from `enabledProviderIds` (PE has no enable-by-id API) and applies catalog operant strengths via `AffectPersist` import — PE 0.6.1 seeds action ids at default operant level only. Named vs ambient jitter is host-side.
+`PresetBuilder.Build(preset)` assembles PE providers from `enabledProviderIds` (PE has no enable-by-id API) and applies catalog operant strengths via `AffectPersist` import — PE 0.6.1 seeds action ids at default operant level only. Named vs ambient jitter is host-side. Optional `Bands` let jitter stay inside the authored range.
 
 `CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if later catalogs show the record is wrong.
+
+`Catalog` currently encodes five markdown rows in C#. Other profession files are authoring-ahead of that list.
 
 ## Fantasy vs science docs
 
@@ -83,13 +86,13 @@ Each clan preset should split:
 2. **Knobs** — Piaget formal operational, high Openness, strong explore operants
 3. **Citations** — Piaget 1950; McCrae & Costa 2008; project convention for operant strengths
 
-Avoid one bibliography backing the whole archetype.
+Avoid one bibliography backing the whole archetype. Profession files use the same three sections.
 
 ## Cognitive difference without IQ
 
 | Player-visible behavior | Knob |
 | --- | --- |
-| Won’t follow hypothetical clues | `CognitiveStage.Preoperational`, `hypothetical` flag off |
+| Won’t follow hypothetical clues | `cognitiveStage` below `FormalOperational` (PE `hypothetical` flag off) |
 | Repeats old tactic | Skinner strength on `repeat-protocol` |
 | Won’t try the puzzle | Self-efficacy channel when PE ships a Bandura provider |
 | Curious vs rigid | OCEAN Openness |
@@ -97,9 +100,15 @@ Avoid one bibliography backing the whole archetype.
 
 ## Tiers and jitter
 
-- **Named** — full preset composition
-- **Ambient** — personality + mood only, ± jitter on traits
-- **Crowd** — shared district seed (Personality Engine applications notes: cost of one instance per walker)
+Personality Engine has no jitter API. `BuildOptions.Seed` is optional; omit it to use catalog midpoints as written.
+
+| Tier | What `PresetBuilder` does |
+| --- | --- |
+| Named | Full composition. With a seed: trait jitter ±0.05 inside the band |
+| Ambient | Personality + mood; skip OCC, Peterson, Skinner, and Erikson; keep Piaget when enabled. With a seed: ±0.12 |
+| Crowd | Same provider subset as ambient; meant for a shared district seed |
+
+Catalog jitter notes on each markdown file are author intent for those magnitudes.
 
 ## Multiplayer note
 

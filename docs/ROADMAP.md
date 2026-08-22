@@ -2,13 +2,13 @@
 
 Archetypes maps **preset ids** into Personality Engine compositions. Direction only — not a contract. Patch releases fix docs and presets without schema breaks.
 
-Current status: **0.1 builder** on top of profession and clan catalogs. `MindPreset` is inferred from those tables; `PresetBuilder` builds an `AffectEngine`. Temperament, embedded JSON, and a schema freeze are later.
+Current status: **0.1 builder** on `main`. Profession and clan catalogs, `MindPreset`, and `PresetBuilder` → `AffectEngine`. Temperament, embedded JSON, and a schema freeze (NuGet) are later.
 
 Personality Engine home: https://github.com/RossSim/personality-engine
 
 ## Sequencing (catalog-first)
 
-Author profession and clan **tables** (fiction / knobs / citations) before locking `MindPreset`. Version numbers below are later intent, not the next coding slice.
+Author profession and clan **tables** (fiction / knobs / citations) before extending `MindPreset`. Version numbers below are later intent, not a rewrite of the charter.
 
 ```mermaid
 flowchart LR
@@ -22,12 +22,12 @@ flowchart LR
 | Version | What a host would get |
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
-| 0.1 | Profession + clan tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; tests against smith, scout, clerk, Philobrain, Trog |
-| later | Temperament catalog (Thomas & Chess bands) + jitter |
+| 0.1 | Profession + clan tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds for smith, scout, clerk, Philobrain, Trog |
+| later | Temperament catalog (Thomas & Chess bands) on the same jitter tiers |
 | later | Embedded JSON presets + `docs/CITATIONS.md` per knob |
 | 1.0 | Frozen `MindPreset` schema and builder contract; NuGet `Archetypes.Core` |
 
-Do not invent knobs Personality Engine cannot consume yet. Embedded JSON is later.
+Do not invent knobs Personality Engine cannot consume yet. Named vs ambient jitter already ships with the builder; temperament is a later *catalog*.
 
 ## Depends on Personality Engine
 

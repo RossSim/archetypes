@@ -1,12 +1,12 @@
 # Presets
 
-Hand-authored catalog tables. Markdown is the authoring format. C# `MindPreset` encodings of the first seeds live in `src/Archetypes.Core`; later JSON should be inferred from these rows.
+Hand-authored catalog tables. Markdown is the authoring source. C# `MindPreset` encodings of the first seeds live in `src/Archetypes.Core`; later JSON should be inferred from these rows.
 
 ## Layout
 
 ```text
 presets/
-├── README.md              # this file: index + profession guardrails
+├── README.md              # this file: hub + profession guardrails
 ├── schema.md              # shared row fields
 ├── professions/
 │   ├── README.md          # ISCO-08 sampling frame + full job index
@@ -17,29 +17,17 @@ presets/
     └── trog-warrior.md
 ```
 
-Temperament is later.
+Temperament is a later catalog.
 
-## Profession index
+## Where to look
 
-Full index and the ILO ISCO-08 sampling frame live in [`professions/README.md`](professions/README.md). Short list:
-
-| Id | Fiction (one line) |
+| Need | File |
 | --- | --- |
-| `village-smith` | Village craft: forge, repair, keep a steady shop |
-| `carpenter` | Wood joinery and repair |
-| `wilderness-scout` | Reconnaissance and lookout, not a named IP |
-| `town-watch` | Gate and street garrison |
-| `records-clerk` | Record-keeper and administrator |
-| `guild-steward` | Keep a hall, a roster, and a purse |
-| `market-merchant` | Buy, sell, and haggle in the open square |
-| `innkeeper` | Beds, stew, and the common room |
-| `healer` | Bind wounds and sit with the sick |
-| `apothecary` | Measure, compound, and refuse a bad ask |
-| `school-teacher` | Letters, sums, and keeping a room |
-| `field-farmer` | Fields, seasons, and stores |
-| `herder` | Flock, pasture, and the dog |
-| `water-miller` | Keep the wheel turning |
-| `porter` | Carry, stack, and wait at the door |
+| Row fields | [`schema.md`](schema.md) |
+| Job index and ISCO-08 sampling frame | [`professions/README.md`](professions/README.md) |
+| Clan template and index | [`clans/README.md`](clans/README.md) |
+
+`Catalog` in `src/Archetypes.Core` currently encodes five rows: `village-smith`, `wilderness-scout`, `records-clerk`, `philobrain-scholar`, `trog-warrior`. Other profession markdown files are authoring-ahead of that C# list.
 
 ## Profession guardrails
 

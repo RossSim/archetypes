@@ -1,6 +1,6 @@
 # Catalog entry schema
 
-Shared **table row** for profession entries (and later clan entries). This is markdown, not a C# record.
+Shared **table row** for profession and clan entries. Markdown is the authoring format; the C# record is `MindPreset` in `src/Archetypes.Core`.
 
 Personality Engine **0.6.1+** knobs only. Do not invent fields the engine cannot consume yet.
 
@@ -26,7 +26,7 @@ Personality Engine **0.6.1+** knobs only. Do not invent fields the engine cannot
 
 ## Trait bands (project convention)
 
-Use a band plus a midpoint so a later builder can jitter inside the band.
+Use a band plus a midpoint so `PresetBuilder` can jitter inside the band when a host passes `BuildOptions.Seed`.
 
 | Band | Range | Typical midpoint |
 | --- | --- | --- |
