@@ -7,6 +7,10 @@ Versions follow [SemVer](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- C# `Catalog` encodings for the remaining profession rows so every ISCO-08 major-group job has a `MindPreset`
+
 ## [0.1.0] - 2026-08-22
 
 ### Added

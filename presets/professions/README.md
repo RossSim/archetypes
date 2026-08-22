@@ -45,4 +45,4 @@ Sources for this table: International Labour Office (2012), *International Stand
 
 ## C# encodings
 
-`Catalog` currently encodes three jobs: `village-smith`, `wilderness-scout`, `records-clerk`. The other rows in this index are markdown-only until they are added to `src/Archetypes.Core`.
+`Catalog` encodes every job in this index.

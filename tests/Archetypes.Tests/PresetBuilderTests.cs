@@ -107,6 +107,49 @@ public sealed class PresetBuilderTests
         Assert.Throws<ArgumentException>(() => PresetBuilder.Build(bad));
     }
 
+    [Fact]
+    public void Every_profession_omits_stages()
+    {
+        Assert.Equal(15, Catalog.Professions.Count);
+        foreach (var job in Catalog.Professions)
+        {
+            Assert.Equal("profession", job.Category);
+            Assert.Null(job.Stage);
+            Assert.Null(job.IdentityStage);
+        }
+    }
+
+    [Fact]
+    public void Scout_is_the_only_profession_with_peterson()
+    {
+        foreach (var job in Catalog.Professions)
+        {
+            var peterson = job.EnabledProviderIds.Contains("peterson-maps");
+            if (job.Id == "wilderness-scout")
+                Assert.True(peterson);
+            else
+                Assert.False(peterson);
+        }
+    }
+
+    [Fact]
+    public void Porter_is_trained_work_not_a_cognitive_rank()
+    {
+        Assert.Null(Catalog.Porter.Stage);
+        Assert.True(Catalog.Porter.Traits.Conscientiousness >= 0.65f);
+        var snap = PresetBuilder.Build(Catalog.Porter).Snapshot;
+        Assert.True(snap.TryGet(OperantLearningProvider.StrengthKey("carry"), out var carry));
+        Assert.Equal(0.78f, carry, 3);
+    }
+
+    [Fact]
+    public void Miller_applies_catalog_operant_strength()
+    {
+        var snap = PresetBuilder.Build(Catalog.WaterMiller).Snapshot;
+        Assert.True(snap.TryGet(OperantLearningProvider.StrengthKey("tend-mill"), out var tend));
+        Assert.Equal(0.76f, tend, 3);
+    }
+
     public static IEnumerable<object[]> CatalogSeeds()
     {
         foreach (var seed in Catalog.Seeds)

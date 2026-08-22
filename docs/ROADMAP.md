@@ -22,7 +22,7 @@ flowchart LR
 | Version | What a host would get |
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
-| 0.1 | Profession + clan tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds for smith, scout, clerk, Philobrain, Trog |
+| 0.1 | Profession + clan tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds for every catalog row |
 | later | Temperament catalog (Thomas & Chess bands) on the same jitter tiers |
 | later | Embedded JSON presets + `docs/CITATIONS.md` per knob |
 | 1.0 | Frozen `MindPreset` schema and builder contract; NuGet `Archetypes.Core` |
