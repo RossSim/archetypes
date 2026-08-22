@@ -2,19 +2,19 @@
 
 Archetypes maps **preset ids** into Personality Engine compositions. Direction only — not a contract. Patch releases fix docs and presets without schema breaks.
 
-Current status: **0.1 builder** on `main`. Profession, clan, and temperament catalogs, `MindPreset`, `PresetBuilder` → `AffectEngine`, and embedded JSON. A schema freeze (NuGet) is later.
+Current status: **1.0** on `main`. Frozen `MindPreset` / `PresetBuilder` / `CatalogJson` contract. Profession, clan, and temperament catalogs. `Archetypes.Core` packs as a GitHub Release nupkg depending on Personality Engine 0.6.1.
 
 Personality Engine home: https://github.com/RossSim/personality-engine
 
 ## Sequencing (catalog-first)
 
-Author profession, clan, and temperament **tables** (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. Version numbers below are later intent, not a rewrite of the charter.
+Author profession, clan, and temperament **tables** (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. Patch and minor cuts after 1.0 are not a rewrite of the charter.
 
 ```mermaid
 flowchart LR
   v00["0.0 skeleton"] --> catalogs["profession + clan tables"]
   catalogs --> v01["0.1 builder"]
-  v01 --> later["1.0"]
+  v01 --> v10["1.0 freeze"]
 ```
 
 ## Intended versions
@@ -23,9 +23,9 @@ flowchart LR
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
 | 0.1 | Profession, clan, and temperament tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds; embedded JSON + `docs/CITATIONS.md` |
-| 1.0 | Frozen `MindPreset` schema and builder contract; NuGet `Archetypes.Core` |
+| 1.0 | Frozen `MindPreset` / builder / JSON contract; GitHub Release nupkg `Archetypes.Core` |
 
-Do not invent knobs Personality Engine cannot consume yet. Named vs ambient jitter already ships with the builder. JSON is a portable encoding of the same rows, not a new psychology layer.
+Patch releases fix docs and presets without schema breaks. New catalog rows are minor. Breaking the 1.0 contract is major.
 
 ## Depends on Personality Engine
 

@@ -10,7 +10,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 
 ## What is fixed
 
-- **Shape:** preset id in; PE constructor args out (`OceanTraits`, optional stages, operant seeds, enabled provider ids).
+- **Shape:** preset id in; PE constructor args out (`OceanTraits`, optional stages, operant seeds, enabled provider ids). 1.0 froze that record; see [Design](DESIGN.md#10-contract).
 - **No new psychology in this repo.** Providers stay in [personality-engine](https://github.com/RossSim/personality-engine).
 - **No IQ, g, or WAIS-style composites.** Ability differences use structure (Piaget), training (Skinner), and trait bands.
 - **Public catalog:** fantasy clans, generic professions, and temperament climates only. No real-world race, ethnicity, or national cognitive rank tables. No MBTI.
@@ -22,7 +22,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 
 ## Sequencing (catalog-first)
 
-Author **tables before code**. New profession, clan, and temperament entries start as markdown (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. `PresetBuilder` already maps those rows into Personality Engine. NuGet waits until the schema freeze.
+Author **tables before code**. New profession, clan, and temperament entries start as markdown (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. `PresetBuilder` maps those rows into Personality Engine. The 1.0 contract is frozen; `Archetypes.Core` ships as a GitHub Release nupkg.
 
 Do not invent knobs Personality Engine cannot take yet (Sternberg, RIASEC, Bandura wait for those providers in personality-engine).
 
