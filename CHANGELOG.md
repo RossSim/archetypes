@@ -13,6 +13,7 @@ Versions follow [SemVer](https://semver.org/).
 - Catalog-first sequencing: profession and clan tables before `MindPreset`
 - Profession catalog: shared schema, merge guardrails, and generic jobs covering ILO ISCO-08 major groups (`village-smith`, `wilderness-scout`, `records-clerk`, plus steward, watch, merchant, healer, teacher, innkeeper, farmer, herder, miller, porter, carpenter, apothecary)
 - Clan catalog: three-section template, guardrails, and two fantasy seeds (`philobrain-scholar`, `trog-warrior`)
+- `MindPreset`, `PresetBuilder` → Personality Engine `AffectEngine`, and C# encodings of smith / scout / clerk / Philobrain / Trog
 
 ### Changed
 

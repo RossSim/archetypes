@@ -2,7 +2,7 @@
 
 Archetypes maps **preset ids** into Personality Engine compositions. Direction only — not a contract. Patch releases fix docs and presets without schema breaks.
 
-Current status: **0.0.0 skeleton** plus **profession and clan catalogs** (profession jobs cover ILO ISCO-08 major groups). Next work is still not the builder — wait until these tables have been reviewed, then `MindPreset`.
+Current status: **0.1 builder** on top of profession and clan catalogs. `MindPreset` is inferred from those tables; `PresetBuilder` builds an `AffectEngine`. Temperament, embedded JSON, and a schema freeze are later.
 
 Personality Engine home: https://github.com/RossSim/personality-engine
 
@@ -22,13 +22,12 @@ flowchart LR
 | Version | What a host would get |
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
-| *now* | Profession tables in `presets/professions/` (ISCO-08 major-group coverage) and clan tables (`philobrain-scholar`, `trog-warrior`). No C# builder yet |
-| 0.1 | `MindPreset` inferred from those tables, `PresetBuilder` → `AffectEngine`, tests against the hand-authored seeds |
+| 0.1 | Profession + clan tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; tests against smith, scout, clerk, Philobrain, Trog |
 | later | Temperament catalog (Thomas & Chess bands) + jitter |
 | later | Embedded JSON presets + `docs/CITATIONS.md` per knob |
 | 1.0 | Frozen `MindPreset` schema and builder contract; NuGet `Archetypes.Core` |
 
-Do not start 0.1 until two catalogs have shown which fields Personality Engine can consume.
+Do not invent knobs Personality Engine cannot consume yet. Embedded JSON is later.
 
 ## Depends on Personality Engine
 

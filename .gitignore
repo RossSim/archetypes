@@ -14,3 +14,4 @@ out/
 # NuGet
 packages/
 *.nupkg
+artifacts/

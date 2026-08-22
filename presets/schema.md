@@ -51,7 +51,7 @@ A job or clan may add other **already-shipped** PE ids (for example `peterson-ma
 
 Clan files must use the three-section template in [`clans/README.md`](clans/README.md).
 
-PE’s `OperantLearningProvider` currently seeds listed action ids at its default operant level. Catalog `operantSeeds` strengths are **author intent** for a later builder; they are not applied by PE 0.6.1 on its own.
+PE’s `OperantLearningProvider` currently seeds listed action ids at its default operant level. `PresetBuilder` applies catalog `operantSeeds` strengths through `AffectPersist` import.
 
 ## File shape
 
@@ -63,7 +63,6 @@ Each entry is one markdown file with three sections:
 
 ## Out of scope on this schema
 
-- `MindPreset` C# type
 - Embedded JSON loader
 - RIASEC, Sternberg, Bandura, HEXACO
 - IQ / g channels

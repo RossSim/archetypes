@@ -1,6 +1,6 @@
 # Presets
 
-Hand-authored catalog tables. Markdown is the format until a builder exists. There is no C# `MindPreset` yet; later code should be inferred from these rows.
+Hand-authored catalog tables. Markdown is the authoring format. C# `MindPreset` encodings of the first seeds live in `src/Archetypes.Core`; later JSON should be inferred from these rows.
 
 ## Layout
 

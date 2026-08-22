@@ -31,9 +31,9 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**Skeleton.** Charter, roadmap, design notes, plus a **profession catalog** covering ILO ISCO-08 major groups and **clan** catalog tables. Next: a builder inferred from those rows. No NuGet package yet.
+**Skeleton plus builder.** Charter, catalogs (profession + clan), and `PresetBuilder` → Personality Engine `AffectEngine`. No public NuGet package yet.
 
-Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
+Depends on Personality Engine **0.6.1+** (`netstandard2.1`). Restore that package from the GitHub Release before `dotnet test`: `bash scripts/restore-pe.sh`.
 
 ## Documentation
 
@@ -41,7 +41,7 @@ Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 | --- | --- |
 | [Charter](docs/CHARTER.md) | What is fixed vs catalog-first |
 | [Roadmap](docs/ROADMAP.md) | Tables now; version cuts later |
-| [Design](docs/DESIGN.md) | Catalog row, later MindPreset, guardrails |
+| [Design](docs/DESIGN.md) | Catalog row, MindPreset, guardrails |
 | [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
 | [Changelog](CHANGELOG.md) | Version notes |
 | [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
@@ -49,7 +49,7 @@ Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 | [Profession sampling](presets/professions/README.md) | ISCO-08 major groups as a sampling frame |
 | [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
 
-## Planned layout
+## Layout
 
 ```text
 archetypes/
@@ -57,9 +57,18 @@ archetypes/
 ├── presets/           # catalog tables (profession + clan)
 │   ├── professions/
 │   └── clans/
-├── src/               # later: MindPreset, PresetBuilder → AffectEngine
-└── tests/
+├── src/Archetypes.Core/   # MindPreset, Catalog seeds, PresetBuilder
+└── tests/Archetypes.Tests/
 ```
+
+```csharp
+using Archetypes;
+
+var engine = PresetBuilder.Build(Catalog.VillageSmith);
+engine.Tick(PersonalityEngine.WorldEvent.Tick);
+```
+
+Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood, Piaget kept when the seed enabled it).
 
 ## License
 
