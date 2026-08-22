@@ -2,7 +2,7 @@
 
 Archetypes maps **preset ids** into Personality Engine compositions. Direction only — not a contract. Patch releases fix docs and presets without schema breaks.
 
-Current status: **0.0.0 skeleton** plus **profession and clan catalogs**. Next work is still not the builder — wait until these tables have been reviewed, then `MindPreset`.
+Current status: **0.0.0 skeleton** plus **profession and clan catalogs** (profession jobs cover ILO ISCO-08 major groups). Next work is still not the builder — wait until these tables have been reviewed, then `MindPreset`.
 
 Personality Engine home: https://github.com/RossSim/personality-engine
 
@@ -22,7 +22,7 @@ flowchart LR
 | Version | What a host would get |
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
-| *now* | Profession tables (`village-smith`, `wilderness-scout`, `records-clerk`) and clan tables (`philobrain-scholar`, `trog-warrior`). No C# builder yet |
+| *now* | Profession tables in `presets/professions/` (ISCO-08 major-group coverage) and clan tables (`philobrain-scholar`, `trog-warrior`). No C# builder yet |
 | 0.1 | `MindPreset` inferred from those tables, `PresetBuilder` → `AffectEngine`, tests against the hand-authored seeds |
 | later | Temperament catalog (Thomas & Chess bands) + jitter |
 | later | Embedded JSON presets + `docs/CITATIONS.md` per knob |

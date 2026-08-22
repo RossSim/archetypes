@@ -31,7 +31,7 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**Skeleton.** Charter, roadmap, design notes, plus **profession** and **clan** catalog tables. Next: a builder inferred from those rows. No NuGet package yet.
+**Skeleton.** Charter, roadmap, design notes, plus a **profession catalog** covering ILO ISCO-08 major groups and **clan** catalog tables. Next: a builder inferred from those rows. No NuGet package yet.
 
 Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 
@@ -45,7 +45,8 @@ Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 | [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
 | [Changelog](CHANGELOG.md) | Version notes |
 | [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
-| [Profession catalog](presets/README.md) | Schema, guardrails, smith / scout / clerk |
+| [Profession catalog](presets/README.md) | Schema, guardrails, job index |
+| [Profession sampling](presets/professions/README.md) | ISCO-08 major groups as a sampling frame |
 | [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
 
 ## Planned layout

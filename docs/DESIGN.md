@@ -43,7 +43,7 @@ Profession entries (and any later job added to `presets/professions/`) must pass
 - Only Personality Engine 0.6.1+ constructor args
 - Omit `cognitiveStage` / `identityStage` on generic adult jobs unless the host is portraying a developmental role
 
-The same list is in [`presets/README.md`](../presets/README.md).
+The same list is in [`presets/README.md`](../presets/README.md). Occupational *space* is sampled with at least one generic job per ILO ISCO-08 major group; see [`presets/professions/README.md`](../presets/professions/README.md). Do not import ISCO skill levels as Piaget stage, IQ, or prestige.
 
 ## Clan catalog guardrails
 
