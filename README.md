@@ -2,9 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-Preset catalogs for [Personality Engine](https://github.com/RossSim/personality-engine): profession, temperament, and fantasy-clan **mind seeds** that map into PE constructor arguments.
+Preset catalogs for [Personality Engine](https://github.com/RossSim/personality-engine): profession and fantasy-clan **mind seeds** (temperament later) that map into PE constructor arguments.
 
-Personality Engine is runtime middleware (events in → snapshot out). Archetypes is **authoring data**: tables, builders, and lore that turn “village blacksmith” or “Philobrain scholar” into `OceanTraits`, Piaget stage, operant seeds, and which providers to enable. It does not add new psychology providers to PE.
+Personality Engine is runtime middleware (events in → snapshot out). Archetypes is **authoring data plus a builder**: markdown tables, C# `MindPreset` rows, and lore that turn “village blacksmith” or “Philobrain scholar” into `OceanTraits`, Piaget stage, operant seeds, and which providers to enable. It does not add new psychology providers to PE.
 
 ```mermaid
 flowchart LR
@@ -19,7 +19,7 @@ flowchart LR
 
 - Cited **defaults** per knob (traits, cognitive stage, training history), not a single IQ score
 - Optional **jitter** for named heroes vs ambient NPCs
-- **Fantasy** clan and profession ids — not real-world race or ethnicity presets in the public catalog
+- **Fantasy** clan and generic profession ids — not real-world race or ethnicity presets in the public catalog
 
 ## What this is not
 
@@ -31,34 +31,13 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**Skeleton plus builder.** Charter, catalogs (profession + clan), and `PresetBuilder` → Personality Engine `AffectEngine`. No public NuGet package yet.
+**0.1 builder** on `main`. Profession and clan catalogs plus `PresetBuilder` → Personality Engine `AffectEngine`. No public NuGet package yet (that waits for a schema freeze).
 
-Depends on Personality Engine **0.6.1+** (`netstandard2.1`). Restore that package from the GitHub Release before `dotnet test`: `bash scripts/restore-pe.sh`.
+Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 
-## Documentation
-
-| Doc | What it is |
-| --- | --- |
-| [Charter](docs/CHARTER.md) | What is fixed vs catalog-first |
-| [Roadmap](docs/ROADMAP.md) | Tables now; version cuts later |
-| [Design](docs/DESIGN.md) | Catalog row, MindPreset, guardrails |
-| [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
-| [Changelog](CHANGELOG.md) | Version notes |
-| [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
-| [Profession catalog](presets/README.md) | Schema, guardrails, job index |
-| [Profession sampling](presets/professions/README.md) | ISCO-08 major groups as a sampling frame |
-| [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
-
-## Layout
-
-```text
-archetypes/
-├── docs/
-├── presets/           # catalog tables (profession + clan)
-│   ├── professions/
-│   └── clans/
-├── src/Archetypes.Core/   # MindPreset, Catalog seeds, PresetBuilder
-└── tests/Archetypes.Tests/
+```bash
+bash scripts/restore-pe.sh
+dotnet test
 ```
 
 ```csharp
@@ -68,7 +47,36 @@ var engine = PresetBuilder.Build(Catalog.VillageSmith);
 engine.Tick(PersonalityEngine.WorldEvent.Tick);
 ```
 
-Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood, Piaget kept when the seed enabled it).
+Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood; Piaget kept when the seed enabled it). Markdown under `presets/` is the authoring source. `Catalog` currently encodes five of those rows in C# (`village-smith`, `wilderness-scout`, `records-clerk`, `philobrain-scholar`, `trog-warrior`).
+
+## Documentation
+
+| Doc | What it is |
+| --- | --- |
+| [Charter](docs/CHARTER.md) | What is fixed |
+| [Roadmap](docs/ROADMAP.md) | What shipped vs later |
+| [Design](docs/DESIGN.md) | Layers, builder, guardrails |
+| [Catalog schema](presets/schema.md) | Shared row fields |
+| [Catalog hub](presets/README.md) | Layout and profession guardrails |
+| [Profession sampling](presets/professions/README.md) | ISCO-08 frame and job index |
+| [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
+| [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
+| [Changelog](CHANGELOG.md) | Version notes |
+| [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
+
+## Layout
+
+```text
+archetypes/
+├── docs/
+├── presets/                 # markdown catalog (authoring source)
+│   ├── schema.md
+│   ├── professions/
+│   └── clans/
+├── src/Archetypes.Core/     # MindPreset, Catalog seeds, PresetBuilder
+├── tests/Archetypes.Tests/
+└── scripts/restore-pe.sh    # PersonalityEngine.Core 0.6.1 from GitHub Release
+```
 
 ## License
 

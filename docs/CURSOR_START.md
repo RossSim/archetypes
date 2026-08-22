@@ -5,9 +5,9 @@ Copy into a new Cursor chat if the session has no repo memory.
 ```
 START
 Repo: https://github.com/RossSim/archetypes (public MIT)
-Companion to https://github.com/RossSim/personality-engine. This is authoring data (preset catalogs and, later, a builder), not a Unity project and not a psychology-provider library.
+Companion to https://github.com/RossSim/personality-engine. This is authoring data plus a builder (preset catalogs, MindPreset, PresetBuilder), not a Unity project and not a psychology-provider library.
 
-Read docs/CHARTER.md first. Then docs/DESIGN.md and docs/ROADMAP.md. Catalogs come before MindPreset and PresetBuilder. No new IAffectProvider here. No IQ or g. No real-world race, ethnicity, or national rank presets. No LLM in this repo.
+Read docs/CHARTER.md first. Then docs/DESIGN.md and docs/ROADMAP.md. New catalog rows are markdown first; MindPreset is inferred from those rows. No new IAffectProvider here. No IQ or g. No real-world race, ethnicity, or national rank presets. No LLM in this repo.
 
 GitHub is public. Do not put private issue-tracker URLs, project keys, or ticket ids in this repository, GitHub pull requests, issues, commit messages, Releases, or release notes. Product docs live in this repository. Use the Atlassian MCP for Jira only; keep that tracker private.
 END
@@ -20,3 +20,4 @@ Standing rules:
 - This repository is self-contained. Do not name other private or internal projects, studios, or repos.
 - Every preset knob cites a paper or is labeled project convention.
 - No new `IAffectProvider` implementations here. Those stay in personality-engine.
+- Restore Personality Engine 0.6.1 with `bash scripts/restore-pe.sh` before `dotnet test`.

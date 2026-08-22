@@ -1,6 +1,6 @@
 # Archetypes charter
 
-`archetypes` is a companion **preset library** for games: profession, temperament, and fantasy-clan **mind seeds** that map into Personality Engine constructor arguments.
+`archetypes` is a companion **preset library** for games: profession and fantasy-clan **mind seeds** (temperament later) that map into Personality Engine constructor arguments.
 
 **Home:** https://github.com/RossSim/archetypes (public MIT)
 
@@ -22,7 +22,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 
 ## Sequencing (catalog-first)
 
-Author **tables before code**. Profession and clan catalogs (markdown with fiction / knobs / citations) come first so `MindPreset` is inferred from real entries. `PresetBuilder` maps those rows into Personality Engine. NuGet waits until the schema freeze.
+Author **tables before code**. New profession and clan entries start as markdown (fiction / knobs / citations) so `MindPreset` stays inferred from real rows. `PresetBuilder` already maps those rows into Personality Engine. NuGet waits until the schema freeze.
 
 Do not invent knobs Personality Engine cannot take yet (Sternberg, RIASEC, Bandura wait for those providers in personality-engine).
 

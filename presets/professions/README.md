@@ -42,3 +42,7 @@ Sources for this table: International Labour Office (2012), *International Stand
 | `herder` | Flock, pasture, and the dog |
 | `water-miller` | Keep the wheel turning |
 | `porter` | Carry, stack, and wait at the door |
+
+## C# encodings
+
+`Catalog` currently encodes three jobs: `village-smith`, `wilderness-scout`, `records-clerk`. The other rows in this index are markdown-only until they are added to `src/Archetypes.Core`.
