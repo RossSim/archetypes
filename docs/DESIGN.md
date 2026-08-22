@@ -29,7 +29,21 @@ Every public entry should be able to carry:
 - optional `jitter` notes (named vs ambient)
 - a short **fiction** blurb separate from knobs
 
-Markdown or JSON is fine until the builder exists.
+Markdown or JSON is fine until the builder exists. The first rows live in [`presets/`](../presets/README.md); field definitions are in [`presets/schema.md`](../presets/schema.md).
+
+## Profession catalog guardrails
+
+Profession entries (and any later job added to `presets/professions/`) must pass:
+
+- No IQ, g, or composite cognitive rank — including “this job is smarter”
+- No real-world race, ethnicity, or national presets
+- No MBTI
+- Fiction ≠ science: the blurb must not stand in for a citation
+- Every numeric knob cites a paper **or** is labeled **project convention**
+- Only Personality Engine 0.6.1+ constructor args
+- Omit `cognitiveStage` / `identityStage` on generic adult jobs unless the host is portraying a developmental role
+
+The same list is in [`presets/README.md`](../presets/README.md).
 
 ## MindPreset (after catalogs)
 
