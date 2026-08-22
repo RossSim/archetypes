@@ -31,9 +31,7 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**0.1 builder** on `main`. Profession, clan, and temperament catalogs plus `PresetBuilder` → Personality Engine `AffectEngine`. Embedded JSON loads the same rows. No public NuGet package yet (that waits for a schema freeze).
-
-Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
+**1.0** (`Archetypes.Core` 1.0.0). Frozen `MindPreset` / `PresetBuilder` / `CatalogJson` contract. Profession, clan, and temperament catalogs. Packs as a GitHub Release nupkg depending on Personality Engine **0.6.1+** (`netstandard2.1`).
 
 ```bash
 bash scripts/restore-pe.sh
@@ -64,6 +62,7 @@ Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass 
 | [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
 | [Temperament catalog](presets/temperament/README.md) | Thomas & Chess climates, not types |
 | [Citations](docs/CITATIONS.md) | Shared per-knob papers and project-convention labels |
+| [Releasing](docs/RELEASING.md) | Version bump, changelog, GitHub Release pack |
 | [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
 | [Changelog](CHANGELOG.md) | Version notes |
 | [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |

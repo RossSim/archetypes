@@ -212,4 +212,11 @@ public sealed class PresetBuilderTests
         foreach (var seed in Catalog.Seeds)
             yield return new object[] { seed };
     }
+
+    [Fact]
+    public void Assembly_version_is_1_0_0()
+    {
+        var version = typeof(Catalog).Assembly.GetName().Version;
+        Assert.Equal(new Version(1, 0, 0, 0), version);
+    }
 }

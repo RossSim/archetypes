@@ -86,9 +86,21 @@ public sealed record MindPreset(
 
 `PresetBuilder.Build(preset)` assembles PE providers from `enabledProviderIds` (PE has no enable-by-id API) and applies catalog operant strengths via `AffectPersist` import — PE 0.6.1 seeds action ids at default operant level only. Named vs ambient jitter is host-side. Optional `Bands` let jitter stay inside the authored range.
 
-`CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if later catalogs show the record is wrong.
+`CitationRef` ties each knob to a paper or labels it **project convention**.
 
 `Catalog` encodes every profession, clan, and temperament markdown row in C#. `CatalogJson.Load(id)` reads the matching embedded JSON.
+
+## 1.0 contract
+
+These shapes are frozen. New catalog **rows** (another job, clan, or climate) are compatible. Removing or renaming a field, JSON key, jitter magnitude, or known provider id is a **major** bump. Optional additive fields are a **minor** bump. See [Releasing](RELEASING.md).
+
+**`MindPreset`:** `Id`, `Category` (`profession` / `clan` / `temperament`), `Traits` (OCEAN 0..1), optional `Stage` / `IdentityStage`, optional `OperantSeeds`, `EnabledProviderIds`, `Rationale`, optional `Bands` (`low` / `mid` / `high`).
+
+**`PresetBuilder.Build(preset, options?)`:** assembles PE 0.6.1+ providers from `enabledProviderIds`. Named keeps the listed stack. Ambient and crowd skip `occ`, `occ-to-pad`, `peterson-metatraits`, `peterson-maps`, `skinner-operant`, and `erikson-psychosocial`; they keep Piaget when enabled. Omit `BuildOptions.Seed` for catalog midpoints. Named jitter ±0.05; ambient/crowd ±0.12; both clamp inside the band (expanding the band if the midpoint sits outside).
+
+**Known provider ids:** `ocean`, `ocean-to-pad`, `occ`, `occ-to-pad`, `pad-mood`, `peterson-metatraits`, `peterson-maps`, `skinner-operant`, `piaget-equilibration`, `erikson-psychosocial`.
+
+**`CatalogJson`:** camelCase DTO documents (not polymorphic types). `Parse` / `Serialize` / `Load(id)` / `LoadAll`. Band names are `low` / `mid` / `high`. Stages are enum names (`FormalOperational`, …). Extra JSON members are ignored.
 
 ## Fantasy vs science docs
 
