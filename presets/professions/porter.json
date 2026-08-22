@@ -1,0 +1,47 @@
+{
+  "id": "porter",
+  "category": "profession",
+  "traits": {
+    "openness": 0.38,
+    "conscientiousness": 0.7,
+    "extraversion": 0.48,
+    "agreeableness": 0.52,
+    "neuroticism": 0.4
+  },
+  "operantSeeds": {
+    "lift": 0.76,
+    "carry": 0.78,
+    "set-down": 0.7,
+    "take-fare": 0.45,
+    "idle": 0.28
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000). Direction for trained work, not a caste. Do not encode as lower intelligence."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "low",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

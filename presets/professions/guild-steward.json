@@ -1,0 +1,47 @@
+{
+  "id": "guild-steward",
+  "category": "profession",
+  "traits": {
+    "openness": 0.48,
+    "conscientiousness": 0.76,
+    "extraversion": 0.68,
+    "agreeableness": 0.52,
+    "neuroticism": 0.42
+  },
+  "operantSeeds": {
+    "assign": 0.72,
+    "tally": 0.7,
+    "hear-petition": 0.6,
+    "refuse": 0.45,
+    "idle": 0.2
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "extraversion",
+      "source": "Barrick & Mount (1991) Extraversion for managers. Exact midpoint: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "high",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

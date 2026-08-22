@@ -1,0 +1,53 @@
+{
+  "id": "wilderness-scout",
+  "category": "profession",
+  "traits": {
+    "openness": 0.72,
+    "conscientiousness": 0.62,
+    "extraversion": 0.48,
+    "agreeableness": 0.42,
+    "neuroticism": 0.48
+  },
+  "operantSeeds": {
+    "scout": 0.75,
+    "track": 0.7,
+    "explore": 0.65,
+    "forage": 0.55,
+    "report": 0.5
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant",
+    "peterson-metatraits",
+    "peterson-maps"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "openness",
+      "source": "Barrick & Mount (1991) Openness and training proficiency. Exact midpoint: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    },
+    {
+      "knob": "peterson-maps",
+      "source": "DeYoung, Peterson & Higgins (2002); Peterson (1999). Enabling for a scout: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "high",
+    "conscientiousness": "mid",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

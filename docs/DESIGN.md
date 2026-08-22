@@ -29,7 +29,7 @@ Every public entry should be able to carry:
 - optional `jitter` notes (named vs ambient)
 - a short **fiction** blurb separate from knobs
 
-Markdown is the authoring format. The builder reads `MindPreset` in C# (`src/Archetypes.Core`). Embedded JSON is later. Field definitions: [`presets/schema.md`](../presets/schema.md). Catalog hub: [`presets/README.md`](../presets/README.md).
+Markdown is the authoring format. C# `Catalog` encodes those rows. `CatalogJson` loads the same rows from embedded JSON under `presets/`. Field definitions: [`presets/schema.md`](../presets/schema.md). Catalog hub: [`presets/README.md`](../presets/README.md). Shared papers: [`CITATIONS.md`](CITATIONS.md).
 
 ## Profession catalog guardrails
 
@@ -88,7 +88,7 @@ public sealed record MindPreset(
 
 `CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if later catalogs show the record is wrong.
 
-`Catalog` encodes every profession, clan, and temperament markdown row in C#.
+`Catalog` encodes every profession, clan, and temperament markdown row in C#. `CatalogJson.Load(id)` reads the matching embedded JSON.
 
 ## Fantasy vs science docs
 

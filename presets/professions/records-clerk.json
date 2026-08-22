@@ -1,0 +1,47 @@
+{
+  "id": "records-clerk",
+  "category": "profession",
+  "traits": {
+    "openness": 0.42,
+    "conscientiousness": 0.8,
+    "extraversion": 0.4,
+    "agreeableness": 0.55,
+    "neuroticism": 0.45
+  },
+  "operantSeeds": {
+    "file": 0.75,
+    "copy": 0.7,
+    "tally": 0.65,
+    "recall-record": 0.6,
+    "repeat-protocol": 0.55
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000)."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "low",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

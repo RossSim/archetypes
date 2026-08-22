@@ -31,7 +31,7 @@ See [Disclaimer](DISCLAIMER.md).
 
 ## Status
 
-**0.1 builder** on `main`. Profession, clan, and temperament catalogs plus `PresetBuilder` → Personality Engine `AffectEngine`. No public NuGet package yet (that waits for a schema freeze).
+**0.1 builder** on `main`. Profession, clan, and temperament catalogs plus `PresetBuilder` → Personality Engine `AffectEngine`. Embedded JSON loads the same rows. No public NuGet package yet (that waits for a schema freeze).
 
 Depends on Personality Engine **0.6.1+** (`netstandard2.1`).
 
@@ -44,10 +44,12 @@ dotnet test
 using Archetypes;
 
 var engine = PresetBuilder.Build(Catalog.VillageSmith);
+// same row from embedded JSON:
+// var engine = PresetBuilder.Build(CatalogJson.Load("village-smith"));
 engine.Tick(PersonalityEngine.WorldEvent.Tick);
 ```
 
-Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood; Piaget kept when the seed enabled it). Markdown under `presets/` is the authoring source. `Catalog` encodes every profession, clan, and temperament row in that index.
+Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass `new BuildOptions { Tier = JitterTier.Ambient }` (personality + mood; Piaget kept when the seed enabled it). Markdown under `presets/` is the authoring source. `Catalog` encodes every profession, clan, and temperament row in that index; `CatalogJson` loads the JSON sidecars.
 
 ## Documentation
 
@@ -61,6 +63,7 @@ Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass 
 | [Profession sampling](presets/professions/README.md) | ISCO-08 frame and job index |
 | [Clan catalog](presets/clans/README.md) | Template, guardrails, Philobrain / Trog |
 | [Temperament catalog](presets/temperament/README.md) | Thomas & Chess climates, not types |
+| [Citations](docs/CITATIONS.md) | Shared per-knob papers and project-convention labels |
 | [Cursor start](docs/CURSOR_START.md) | Standing rules for new sessions |
 | [Changelog](CHANGELOG.md) | Version notes |
 | [Disclaimer](DISCLAIMER.md) | Entertainment middleware; not a test |
@@ -70,16 +73,16 @@ Named heroes use the default `JitterTier.Named` (full stack). Ambient NPCs pass 
 ```text
 archetypes/
 ├── docs/
-├── presets/                 # markdown catalog (authoring source)
+├── presets/                 # markdown + JSON catalog (markdown is authoring)
 │   ├── schema.md
 │   ├── professions/
 │   ├── clans/
 │   └── temperament/
-├── src/Archetypes.Core/     # MindPreset, Catalog seeds, PresetBuilder
+├── src/Archetypes.Core/     # MindPreset, Catalog, CatalogJson, PresetBuilder
 ├── tests/Archetypes.Tests/
 └── scripts/restore-pe.sh    # PersonalityEngine.Core 0.6.1 from GitHub Release
 ```
 
 ## License
 
-[MIT](LICENSE). Personality Engine is also MIT; cite academic sources per preset knob in `docs/CITATIONS.md` when that file lands.
+[MIT](LICENSE). Personality Engine is also MIT; cite academic sources per preset knob in [`docs/CITATIONS.md`](docs/CITATIONS.md).

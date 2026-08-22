@@ -1,0 +1,47 @@
+{
+  "id": "town-watch",
+  "category": "profession",
+  "traits": {
+    "openness": 0.38,
+    "conscientiousness": 0.74,
+    "extraversion": 0.52,
+    "agreeableness": 0.42,
+    "neuroticism": 0.45
+  },
+  "operantSeeds": {
+    "challenge": 0.72,
+    "patrol": 0.7,
+    "raise-alarm": 0.62,
+    "repeat-protocol": 0.58,
+    "idle": 0.22
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991) police/watch group direction. Exact midpoint: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "low",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

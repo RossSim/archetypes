@@ -67,7 +67,7 @@ PE’s `OperantLearningProvider` currently seeds listed action ids at its defaul
 
 ## File shape
 
-Each entry is one markdown file with three sections:
+Each entry is one markdown file with three sections. A JSON sidecar named by `id` (`village-smith.json`) is the portable `MindPreset` the assembly embeds. Markdown stays the authoring source.
 
 1. **Fiction** — what a designer or player sees
 2. **Knobs** — tables for traits, operants, providers, optional stages, jitter
@@ -75,6 +75,5 @@ Each entry is one markdown file with three sections:
 
 ## Out of scope on this schema
 
-- Embedded JSON loader
 - RIASEC, Sternberg, Bandura, HEXACO
 - IQ / g channels

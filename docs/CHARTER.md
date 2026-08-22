@@ -14,7 +14,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 - **No new psychology in this repo.** Providers stay in [personality-engine](https://github.com/RossSim/personality-engine).
 - **No IQ, g, or WAIS-style composites.** Ability differences use structure (Piaget), training (Skinner), and trait bands.
 - **Public catalog:** fantasy clans, generic professions, and temperament climates only. No real-world race, ethnicity, or national cognitive rank tables. No MBTI.
-- **Per-knob citations.** Fiction vs science split on clan presets. Project-convention numbers labeled as such.
+- **Per-knob citations.** Fiction vs science split on clan and temperament presets. Shared papers in [`docs/CITATIONS.md`](CITATIONS.md). Project-convention numbers labeled as such.
 - **Not a clinic.** This is entertainment and research middleware, not a psychometric test or a medical device. See [`DISCLAIMER.md`](../DISCLAIMER.md).
 - **GitHub stays public.** Do not put private issue-tracker URLs, project keys, or ticket ids in this repository, GitHub pull requests, issues, commit messages, Releases, or release notes.
 - **Docs live in this repository.** README, `docs/`, and the changelog are the product docs. Do not maintain a separate wiki.

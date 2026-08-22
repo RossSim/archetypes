@@ -1,0 +1,43 @@
+{
+  "id": "slow-to-warm-up",
+  "category": "temperament",
+  "traits": {
+    "openness": 0.42,
+    "conscientiousness": 0.5,
+    "extraversion": 0.3,
+    "agreeableness": 0.48,
+    "neuroticism": 0.52
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "constellation",
+      "source": "Thomas & Chess (1977, 1981); Thomas, Chess & Birch (1968). Mapping onto OCEAN: project convention."
+    },
+    {
+      "knob": "extraversion",
+      "source": "Thomas & Chess withdrawal plus low activity. Exact midpoint: project convention."
+    },
+    {
+      "knob": "pad",
+      "source": "Mehrabian (1996); Gebhard (2005). PAD baseline from ocean-to-pad, not a separate temperament provider."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "mid",
+    "extraversion": "low",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

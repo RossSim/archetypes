@@ -1,0 +1,47 @@
+{
+  "id": "herder",
+  "category": "profession",
+  "traits": {
+    "openness": 0.48,
+    "conscientiousness": 0.7,
+    "extraversion": 0.45,
+    "agreeableness": 0.5,
+    "neuroticism": 0.48
+  },
+  "operantSeeds": {
+    "move-flock": 0.74,
+    "count": 0.7,
+    "fold": 0.65,
+    "call-dog": 0.55,
+    "idle": 0.25
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "conscientiousness",
+      "source": "Barrick & Mount (1991); Hurtz & Donovan (2000)."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "high",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

@@ -6,7 +6,7 @@ namespace Archetypes;
 
 /// <summary>
 /// Catalog row as Personality Engine constructor args. Inferred from
-/// <c>presets/</c> tables; markdown remains the authoring source until JSON lands.
+/// <c>presets/</c> tables; markdown remains the authoring source.
 /// </summary>
 public sealed record MindPreset(
     string Id,

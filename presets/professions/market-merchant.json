@@ -1,0 +1,47 @@
+{
+  "id": "market-merchant",
+  "category": "profession",
+  "traits": {
+    "openness": 0.52,
+    "conscientiousness": 0.58,
+    "extraversion": 0.74,
+    "agreeableness": 0.5,
+    "neuroticism": 0.45
+  },
+  "operantSeeds": {
+    "haggle": 0.75,
+    "buy": 0.62,
+    "sell": 0.72,
+    "call-wares": 0.58,
+    "idle": 0.22
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008)."
+    },
+    {
+      "knob": "extraversion",
+      "source": "Barrick & Mount (1991) Extraversion for sales. Exact midpoint: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    }
+  ],
+  "bands": {
+    "openness": "mid",
+    "conscientiousness": "mid",
+    "extraversion": "high",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}

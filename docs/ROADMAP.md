@@ -2,7 +2,7 @@
 
 Archetypes maps **preset ids** into Personality Engine compositions. Direction only — not a contract. Patch releases fix docs and presets without schema breaks.
 
-Current status: **0.1 builder** on `main`. Profession, clan, and temperament catalogs, `MindPreset`, and `PresetBuilder` → `AffectEngine`. Embedded JSON and a schema freeze (NuGet) are later.
+Current status: **0.1 builder** on `main`. Profession, clan, and temperament catalogs, `MindPreset`, `PresetBuilder` → `AffectEngine`, and embedded JSON. A schema freeze (NuGet) is later.
 
 Personality Engine home: https://github.com/RossSim/personality-engine
 
@@ -14,7 +14,7 @@ Author profession, clan, and temperament **tables** (fiction / knobs / citations
 flowchart LR
   v00["0.0 skeleton"] --> catalogs["profession + clan tables"]
   catalogs --> v01["0.1 builder"]
-  v01 --> later["JSON, 1.0"]
+  v01 --> later["1.0"]
 ```
 
 ## Intended versions
@@ -22,11 +22,10 @@ flowchart LR
 | Version | What a host would get |
 | --- | --- |
 | 0.0 | README, charter, roadmap, design, disclaimer, repo layout |
-| 0.1 | Profession, clan, and temperament tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds for every catalog row |
-| later | Embedded JSON presets + `docs/CITATIONS.md` per knob |
+| 0.1 | Profession, clan, and temperament tables; `MindPreset` / `PresetBuilder` → `AffectEngine`; C# seeds; embedded JSON + `docs/CITATIONS.md` |
 | 1.0 | Frozen `MindPreset` schema and builder contract; NuGet `Archetypes.Core` |
 
-Do not invent knobs Personality Engine cannot consume yet. Named vs ambient jitter already ships with the builder; temperament is a catalog on those same tiers.
+Do not invent knobs Personality Engine cannot consume yet. Named vs ambient jitter already ships with the builder. JSON is a portable encoding of the same rows, not a new psychology layer.
 
 ## Depends on Personality Engine
 

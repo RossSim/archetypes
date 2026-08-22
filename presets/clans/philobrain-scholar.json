@@ -1,0 +1,55 @@
+{
+  "id": "philobrain-scholar",
+  "category": "clan",
+  "traits": {
+    "openness": 0.8,
+    "conscientiousness": 0.52,
+    "extraversion": 0.5,
+    "agreeableness": 0.48,
+    "neuroticism": 0.42
+  },
+  "cognitiveStage": "FormalOperational",
+  "operantSeeds": {
+    "explore": 0.72,
+    "hypothesize": 0.7,
+    "debate": 0.62,
+    "study": 0.58,
+    "teach": 0.45
+  },
+  "enabledProviderIds": [
+    "ocean",
+    "ocean-to-pad",
+    "pad-mood",
+    "occ",
+    "occ-to-pad",
+    "skinner-operant",
+    "piaget-equilibration",
+    "peterson-metatraits",
+    "peterson-maps"
+  ],
+  "rationale": [
+    {
+      "knob": "traits",
+      "source": "McCrae & Costa (2008). High Openness midpoint: project convention."
+    },
+    {
+      "knob": "cognitiveStage",
+      "source": "Inhelder & Piaget (1958); Piaget (1950). Choosing FormalOperational for the clan: project convention."
+    },
+    {
+      "knob": "operantSeeds",
+      "source": "Skinner (1953). Strengths and action ids: project convention."
+    },
+    {
+      "knob": "piaget-equilibration",
+      "source": "Piaget (1950, 1985); Inhelder & Piaget (1958)."
+    }
+  ],
+  "bands": {
+    "openness": "high",
+    "conscientiousness": "mid",
+    "extraversion": "mid",
+    "agreeableness": "mid",
+    "neuroticism": "mid"
+  }
+}
