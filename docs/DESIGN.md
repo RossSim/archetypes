@@ -4,7 +4,7 @@ How Archetypes sits beside Personality Engine without forking psychology.
 
 ## Catalog-first
 
-Tables come first. A profession or clan file in `presets/` is a **row**: fiction, knobs Personality Engine can already take, and per-knob citations. `MindPreset` and `PresetBuilder` are inferred from those rows after two catalogs exist. Do not invent knobs PE cannot consume yet.
+Tables come first. A profession or clan file in `presets/` is a **row**: fiction, knobs Personality Engine can already take, and per-knob citations. `MindPreset` and `PresetBuilder` are inferred from those rows. Do not invent knobs PE cannot consume yet.
 
 ## Split of responsibility
 
@@ -14,7 +14,7 @@ Tables come first. A profession or clan file in `presets/` is a **row**: fiction
 | Cited theory | `IAffectProvider` implementations | — |
 | Starting profile | Constructor args | Catalog tables, later `MindPreset` |
 | Lore names | — | `philobrain-scholar`, `trog-warrior` |
-| Builder (later) | `AlmaComposition.Create(...)` | `PresetBuilder.Build(preset)` |
+| Builder | `AlmaComposition.Create(...)` | `PresetBuilder.Build(preset)` |
 
 ## Catalog row (now)
 
@@ -29,7 +29,7 @@ Every public entry should be able to carry:
 - optional `jitter` notes (named vs ambient)
 - a short **fiction** blurb separate from knobs
 
-Markdown or JSON is fine until the builder exists. The first rows live in [`presets/`](../presets/README.md); field definitions are in [`presets/schema.md`](../presets/schema.md).
+Markdown or JSON is fine for authoring. The builder reads `MindPreset` in C#; embedded JSON is a later epic. The first rows live in [`presets/`](../presets/README.md); field definitions are in [`presets/schema.md`](../presets/schema.md).
 
 ## Profession catalog guardrails
 
@@ -55,9 +55,9 @@ On top of the profession list:
 - Three sections required: Fiction / Knobs / Citations
 - Template: [`presets/clans/README.md`](../presets/clans/README.md)
 
-## MindPreset (after catalogs)
+## MindPreset
 
-Expected builder shape once tables prove the fields:
+Inferred from the profession and clan tables:
 
 ```csharp
 public sealed record MindPreset(
@@ -71,7 +71,9 @@ public sealed record MindPreset(
     IReadOnlyList<CitationRef> Rationale);
 ```
 
-`CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if the catalogs show the record is wrong.
+`PresetBuilder.Build(preset)` assembles PE providers from `enabledProviderIds` (PE has no enable-by-id API) and applies catalog operant strengths via `AffectPersist` import — PE 0.6.1 seeds action ids at default operant level only. Named vs ambient jitter is host-side.
+
+`CitationRef` ties each knob to a paper or labels it **project convention**. Drop or add fields if later catalogs show the record is wrong.
 
 ## Fantasy vs science docs
 

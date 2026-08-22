@@ -22,7 +22,7 @@ Personality Engine is runtime middleware (events in → snapshot out). Archetype
 
 ## Sequencing (catalog-first)
 
-Author **tables before code**. Profession and clan catalogs (JSON or markdown with fiction / knobs / citations) come first so `MindPreset` is inferred from real entries. `PresetBuilder` and NuGet ship only after two catalogs show which fields Personality Engine can actually consume.
+Author **tables before code**. Profession and clan catalogs (markdown with fiction / knobs / citations) come first so `MindPreset` is inferred from real entries. `PresetBuilder` maps those rows into Personality Engine. NuGet waits until the schema freeze.
 
 Do not invent knobs Personality Engine cannot take yet (Sternberg, RIASEC, Bandura wait for those providers in personality-engine).
 

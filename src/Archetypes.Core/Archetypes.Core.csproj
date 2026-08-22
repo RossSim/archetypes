@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Archetypes</RootNamespace>
+    <AssemblyName>Archetypes.Core</AssemblyName>
+    <Version>0.1.0</Version>
+    <PackageId>Archetypes.Core</PackageId>
+    <Authors>RossSim</Authors>
+    <Description>Preset catalogs and builder for Personality Engine mind seeds.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/RossSim/archetypes</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/RossSim/archetypes.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PersonalityEngine.Core" Version="0.6.1" />
+  </ItemGroup>
+</Project>
