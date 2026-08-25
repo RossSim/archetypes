@@ -11,7 +11,7 @@ Versions follow [SemVer](https://semver.org/).
 
 - Disclaimer leads with game/simulation software; public catalog will not accept race or national-rank presets
 - Clan catalog: Philobrain/Trog are not a smart/dumb pair; Piaget stage is a hypotheticals flag
-- Citations registry: Barrick/Hurtz are job-performance validity, not occupational means; DeYoung 2002 split from *Maps of Meaning*; DOIs on the shared papers
+- Citations registry: Barrick/Hurtz are job-performance validity, not occupational means; DeYoung 2002 split from *Maps of Meaning*; DOI, publisher, and catalog links on the shared papers and books
 - Trait-band authoring is half-open at 0.40; scout and innkeeper Conscientiousness 0.60; clerk Extraversion 0.38
 - README defines preset, project convention, and the two load APIs; Sternberg is roadmap-only
 
